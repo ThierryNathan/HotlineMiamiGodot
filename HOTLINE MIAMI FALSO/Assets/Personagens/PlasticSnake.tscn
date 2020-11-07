@@ -5,6 +5,8 @@
 [ext_resource path="res://Assets/Scripts/PlasticSnake.gd" type="Script" id=3]
 
 [node name="PlasticSnake" instance=ExtResource( 2 )]
+collision_layer = 1
+collision_mask = 7
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]

@@ -45,7 +45,12 @@ mover_esquerda={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Jogador"
+2d_physics/layer_2="Tiles"
+2d_physics/layer_3="NPC"
+
 [rendering]
 
 environment/default_clear_color=Color( 0, 0, 0, 1 )
-environment/default_environment="res://default_env.tres"

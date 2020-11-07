@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Lightmaps/Lanterna.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/GFX/PNG/Tiles/tile_463.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/PNG/Tiles/tile_536.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Scripts/CorpoCamera.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "RotacaoCamera"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -30.0, -30.0, 30.0, 30.0 ]
+}
+
+[node name="Camera" type="Node2D"]
+
+[node name="ApoioCamera" type="Sprite" parent="."]
+scale = Vector2( 0.88, 1 )
+texture = ExtResource( 2 )
+
+[node name="CorpoCamera" type="KinematicBody2D" parent="."]
+position = Vector2( 18, 0 )
+rotation = -0.523599
+collision_layer = 4
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorpoCamera"]
+visible = false
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Sprite" type="Sprite" parent="CorpoCamera"]
+position = Vector2( 18.7649, 0 )
+rotation = 1.5708
+scale = Vector2( 0.592074, 1.24757 )
+texture = ExtResource( 3 )
+
+[node name="Lanterna" parent="CorpoCamera" instance=ExtResource( 1 )]
+position = Vector2( 45, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CorpoCamera"]
+autoplay = "RotacaoCamera"
+anims/RotacaoCamera = SubResource( 2 )
