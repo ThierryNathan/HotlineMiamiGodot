@@ -24,3 +24,6 @@ func atualiza_movimento():
 	else:
 		movimento.x = lerp (movimento.x, 0, FRICCAO)
 
+func _input(event):
+	if Input.is_action_just_pressed("visão_noturna"):
+		get_tree().call_group("Interface", "alternar_modo")
