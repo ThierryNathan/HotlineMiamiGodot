@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fases/FaseBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Personagens/NPCs/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Personagens/Guarda.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Fases/Porta.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Fases/PortaTrancada.tscn" type="PackedScene" id=5]
 
 [node name="Level1" instance=ExtResource( 1 )]
 position = Vector2( 4, 0 )
@@ -71,6 +72,6 @@ rotation = 1.5708
 position = Vector2( 358.123, 480.657 )
 rotation = -1.5708
 
-[node name="Porta3" parent="Portas" index="2" instance=ExtResource( 4 )]
-position = Vector2( 356.892, 222.574 )
+[node name="PortaTrancada" parent="PortasTrancadas" index="0" instance=ExtResource( 5 )]
+position = Vector2( 355.656, 224.373 )
 rotation = 1.5708

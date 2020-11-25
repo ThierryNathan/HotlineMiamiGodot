@@ -154,3 +154,5 @@ smoothing_enabled = true
 [node name="Guardas" type="Node2D" parent="."]
 
 [node name="Portas" type="Node" parent="."]
+
+[node name="PortasTrancadas" type="Node" parent="."]
