@@ -13,6 +13,10 @@ _global_script_class_icons={
 
 }
 
+[autoload]
+
+GeradorDeCombinacoes="*res://Assets/Scripts/GeradorDeCombinacoes.gd"
+
 [input]
 
 mover_cima={

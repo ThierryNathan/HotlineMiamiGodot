@@ -156,3 +156,5 @@ smoothing_enabled = true
 [node name="Portas" type="Node" parent="."]
 
 [node name="PortasTrancadas" type="Node" parent="."]
+
+[node name="PCs" type="Node" parent="."]

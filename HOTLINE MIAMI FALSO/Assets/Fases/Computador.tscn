@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Fases/ComputadorTela.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/GFX/PNG/Tiles/tile_537.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Scripts/Computador.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 32 )
+
+[node name="Computador" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 48, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ComputadorTela" parent="CanvasLayer" instance=ExtResource( 1 )]
+visible = false
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

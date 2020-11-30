@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Interface/botao_normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Interface/botao_selecionado.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Interface/botao_pressinado.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/GFX/Interface/Fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 4 )
+
+[resource]
+default_font = SubResource( 2 )
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 1 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 1 )
+Button/styles/pressed = ExtResource( 3 )

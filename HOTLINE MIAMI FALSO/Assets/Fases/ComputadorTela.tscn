@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Scripts/ComputadorTela.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Interface/PainelNumerico.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/GFX/Interface/PNG/glassPanel.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GFX/Interface/PNG/metalPanel_plate.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GFX/Interface/PNG/squareGreen.png" type="Texture" id=5]
+
+[node name="ComputadorTela" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -391.0
+rect_min_size = Vector2( 600, 480 )
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/CenterContainer"]
+margin_left = 36.0
+margin_top = 30.0
+margin_right = 596.0
+margin_bottom = 570.0
+rect_min_size = Vector2( 560, 540 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="NinePatchRect/CenterContainer/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "rewwerwer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -36.3245
+margin_top = -26.0333
+margin_right = -16.3245
+margin_bottom = -6.03333
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

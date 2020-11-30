@@ -1,6 +1,6 @@
 extends Popup
 
-var combinacao = [4, 0, 0, 2]
+var combinacao = []
 var tentativa = []
 
 onready var display = $VBoxContainer/DisplayContainer/Display
@@ -22,14 +22,19 @@ func botao_pressionado(botao):
 	else:
 		inserir(int(botao))
 
+		
+
 func checar_tentativa():
 	if tentativa == combinacao:
+		$AudioStreamPlayer2D.stream = load("res://Assets/SFX/threeTone1.ogg")
 		luz.texture = load("res://Assets/GFX/Interface/PNG/dotGreen.png")
 		$Timer.start()
 	else:
 		reiniciar_trava()
 
 func inserir(botao):
+	$AudioStreamPlayer2D.stream = load("res://Assets/SFX/twoTone1.ogg")
+	$AudioStreamPlayer2D.play()
 	tentativa.append(botao)
 	atualizar_display()
 
