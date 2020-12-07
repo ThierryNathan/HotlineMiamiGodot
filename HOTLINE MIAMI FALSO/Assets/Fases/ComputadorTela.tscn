@@ -50,6 +50,7 @@ margin_right = -20.0
 margin_bottom = -20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "rewwerwer"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

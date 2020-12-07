@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Interface/PainelNumerico.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/GFX/Interface/PNG/glassPanel_cornerTL.png" type="Texture" id=2]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -80.0
+margin_right = -24.0
+margin_bottom = -24.0
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/NinePatchRect/CenterContainer"]
+margin_left = 20.0
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 35.0
+
+[node name="Label" type="Label" parent="Control/NinePatchRect/CenterContainer/HBoxContainer"]
+margin_right = 124.0
+margin_bottom = 27.0
+text = "SUSPEITO"
+align = 1

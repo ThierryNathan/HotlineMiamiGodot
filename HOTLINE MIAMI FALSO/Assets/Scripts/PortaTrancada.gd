@@ -1,12 +1,13 @@
 extends "res://Assets/Scripts/Porta.gd"
 
 func _ready():
-	gerar_combinacao()
-	
-func gerar_combinacao():
-	var tamanho = 4
-	var combinacao = GeradorDeCombinacoes.gerar_combinacao(tamanho)
-	$CanvasLayer/PainelNumerico.combinacao = combinacao
+	#gerar_combinacao()
+	$Label.rect_rotation = -rotation_degrees
+
+#func gerar_combinacao():
+	#var tamanho = 4
+	#var combinacao = GeradorDeCombinacoes.gerar_combinacao(tamanho)
+	#$CanvasLayer/PainelNumerico.combinacao = combinacao
 	
 
 func _on_PortaTrancada_input_event(viewport, event, shape_idx):
@@ -21,3 +22,8 @@ func _on_PortaTrancada_body_exited(body):
 func _on_PainelNumerico_combinacao_correta():
 	abrir()
 	$CanvasLayer/PainelNumerico.hide()
+
+
+func _on_Computador_combinacao(numeros, grupo_de_travas):
+	$CanvasLayer/PainelNumerico.combinacao = numeros
+	$Label.text = grupo_de_travas
