@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Interface/PainelNumerico.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/GFX/Interface/PNG/glassPanel_cornerTL.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/Interface/PNG/dot_shadow.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GFX/Interface/PNG/dotRed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Scripts/BarraSuspeito.gd" type="Script" id=5]
 
 [node name="GUI" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -18,10 +22,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -200.0
-margin_top = -80.0
-margin_right = -24.0
-margin_bottom = -24.0
+margin_left = -264.247
+margin_top = -127.487
+margin_right = -24.2472
+margin_bottom = -27.4869
+rect_min_size = Vector2( 240, 100 )
 texture = ExtResource( 2 )
 patch_margin_left = 20
 patch_margin_top = 20
@@ -38,15 +43,29 @@ margin_left = 6.0
 margin_top = 6.0
 margin_right = -6.0
 margin_bottom = -6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/NinePatchRect/CenterContainer"]
-margin_left = 20.0
-margin_top = 8.0
-margin_right = 144.0
-margin_bottom = 35.0
+margin_left = 38.0
+margin_top = 30.0
+margin_right = 190.0
+margin_bottom = 57.0
 
 [node name="Label" type="Label" parent="Control/NinePatchRect/CenterContainer/HBoxContainer"]
 margin_right = 124.0
 margin_bottom = 27.0
 text = "SUSPEITO"
 align = 1
+
+[node name="BarraSuspeito" type="TextureProgress" parent="Control/NinePatchRect/CenterContainer/HBoxContainer"]
+margin_left = 128.0
+margin_right = 152.0
+margin_bottom = 27.0
+max_value = 150.0
+step = 0.25
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+fill_mode = 4
+script = ExtResource( 5 )
